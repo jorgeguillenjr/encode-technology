@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENCODE Technology - Soluciones Tecnológicas Avanzadas</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="public/encode_combined.png" alt="ENCODE Technology Logo" class="logo-combined">
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#inicio" class="nav-link">
+                    <span class="nav-icon">🏠</span>
+                    <span class="nav-text">Inicio</span>
+                </a>
+                <a href="#servicios" class="nav-link">
+                    <span class="nav-icon">⚙️</span>
+                    <span class="nav-text">Servicios</span>
+                </a>
+                <a href="#nosotros" class="nav-link">
+                    <span class="nav-icon">👥</span>
+                    <span class="nav-text">Nosotros</span>
+                </a>
+                <a href="#contacto" class="nav-link">
+                    <span class="nav-icon">📧</span>
+                    <span class="nav-text">Contacto</span>
+                </a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="particles-container">
+            <canvas id="particles-canvas"></canvas>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="title-line">Innovación</span>
+                    <span class="title-line accent">Tecnológica</span>
+                    <span class="title-line">de Vanguardia</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Transformamos ideas en soluciones digitales avanzadas. 
+                    <span class="typing-text" id="typing-text"></span>
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="scrollToSection('servicios')">
+                        Nuestros Servicios
+                        <span class="btn-arrow">→</span>
+                    </button>
+                    <button class="btn btn-secondary" onclick="scrollToSection('contacto')">
+                        Contáctanos
+                    </button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-elements">
+                    <div class="floating-element" data-speed="0.5"></div>
+                    <div class="floating-element" data-speed="0.8"></div>
+                    <div class="floating-element" data-speed="0.3"></div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="servicios">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Nuestros Servicios</h2>
+                <p class="section-subtitle">Soluciones tecnológicas integrales adaptadas a sus necesidades</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up" data-delay="0">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                            <line x1="16" y1="2" x2="16" y2="6"/>
+                            <line x1="8" y1="2" x2="8" y2="6"/>
+                            <line x1="3" y1="10" x2="21" y2="10"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Bases de Datos</h3>
+                    <p class="service-description">
+                        Diseño, optimización y administración de bases de datos de alto rendimiento 
+                        con tecnologías SQL y NoSQL.
+                    </p>
+                    <div class="service-features">
+                        <span class="feature-tag">MySQL</span>
+                        <span class="feature-tag">PostgreSQL</span>
+                        <span class="feature-tag">MongoDB</span>
+                    </div>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-delay="100">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Mejoras de Procesos</h3>
+                    <p class="service-description">
+                        Análisis y optimización de procesos empresariales mediante 
+                        automatización y tecnologías emergentes.
+                    </p>
+                    <div class="service-features">
+                        <span class="feature-tag">Automatización</span>
+                        <span class="feature-tag">IA</span>
+                        <span class="feature-tag">Analytics</span>
+                    </div>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-delay="200">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="m8 3 4 8 5-5v11H5V9l3-6"/>
+                            <path d="M2 3h6.5L10 7 8 21l4-7h8"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Desarrollos Web</h3>
+                    <p class="service-description">
+                        Aplicaciones web modernas, responsivas y escalables utilizando 
+                        las últimas tecnologías y mejores prácticas.
+                    </p>
+                    <div class="service-features">
+                        <span class="feature-tag">React</span>
+                        <span class="feature-tag">Node.js</span>
+                        <span class="feature-tag">Cloud</span>
+                    </div>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-delay="300">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Soporte Técnico</h3>
+                    <p class="service-description">
+                        Soporte técnico especializado 24/7 para mantener sus sistemas 
+                        funcionando de manera óptima.
+                    </p>
+                    <div class="service-features">
+                        <span class="feature-tag">24/7</span>
+                        <span class="feature-tag">Remoto</span>
+                        <span class="feature-tag">Monitoreo</span>
+                    </div>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-delay="400">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                            <line x1="8" y1="21" x2="16" y2="21"/>
+                            <line x1="12" y1="17" x2="12" y2="21"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Hardware</h3>
+                    <p class="service-description">
+                        Compra y venta de equipos tecnológicos personales con asesoría 
+                        especializada para encontrar la mejor solución.
+                    </p>
+                    <div class="service-features">
+                        <span class="feature-tag">Laptops</span>
+                        <span class="feature-tag">Celulares</span>
+                        <span class="feature-tag">Tabletas</span>
+                    </div>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-delay="500">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                            <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Educación</h3>
+                    <p class="service-description">
+                        Cursos personalizados de las diferentes áreas tecnológicas 
+                        en línea o presencial de programación, bases de datos, procesos, ofimática, etc.
+                    </p>
+                    <div class="service-features">
+                        <span class="feature-tag">Programación</span>
+                        <span class="feature-tag">Bases de Datos</span>
+                        <span class="feature-tag">Ofimática</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="nosotros">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text" data-aos="fade-right">
+                    <h2 class="section-title">Sobre ENCODE Technology</h2>
+                    <p class="about-description">
+                        Somos una empresa líder en soluciones tecnológicas, especializada en 
+                        transformar desafíos complejos en oportunidades de crecimiento digital. 
+                        Nuestro equipo combina experiencia técnica avanzada con visión innovadora.
+                    </p>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="150">0</div>
+                            <div class="stat-label">Proyectos Completados</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="98">0</div>
+                            <div class="stat-label">% Satisfacción Cliente</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="5">0</div>
+                            <div class="stat-label">Años de Experiencia</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual" data-aos="fade-left">
+                    <div class="tech-showcase">
+                        <div class="tech-circle active">
+                            <span>AI</span>
+                        </div>
+                        <div class="tech-circle">
+                            <span>IoT</span>
+                        </div>
+                        <div class="tech-circle">
+                            <span>Cloud</span>
+                        </div>
+                        <div class="tech-circle">
+                            <span>ML</span>
+                        </div>
+                        <div class="connection-lines"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contacto">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Contáctanos</h2>
+                <p class="section-subtitle">Transformemos juntos su visión en realidad digital</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info" data-aos="fade-right">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Teléfono</h3>
+                            <p>(504) 8994 4463</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p>jguillen.jr@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M2 12h20"/>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                            </svg>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Redes Sociales</h3>
+                            <p>@encodetechnology</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" data-aos="fade-left" id="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" required>
+                        <label for="name">Nombre Completo</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" required>
+                        <label for="email">Correo Electrónico</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="phone" name="phone">
+                        <label for="phone">Teléfono</label>
+                    </div>
+                    <div class="form-group">
+                        <select id="service" name="service" required>
+                            <option value="">Seleccionar Servicio</option>
+                            <option value="databases">Bases de Datos</option>
+                            <option value="process">Mejoras de Procesos</option>
+                            <option value="web">Desarrollo Web</option>
+                            <option value="support">Soporte Técnico</option>
+                            <option value="hardware">Hardware</option>
+                            <option value="education">Educación</option>
+                        </select>
+                        <label for="service">Servicio de Interés</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" required></textarea>
+                        <label for="message">Mensaje</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary form-submit">
+                        Enviar Mensaje
+                        <span class="btn-arrow">→</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="public/encode-head-transparent.png" alt="ENCODE Technology Logo" class="footer-logo-image">
+                </div>
+                <p class="footer-text">
+                    Transformando el futuro a través de la innovación tecnológica
+                </p>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ENCODE Technology. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
