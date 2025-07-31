@@ -76,7 +76,7 @@ body {
 }
 
 .logo-combined {
-    height: 80px;
+    height: 60px;
     width: auto;
     object-fit: contain;
     transition: all 0.3s ease;
