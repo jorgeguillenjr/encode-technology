@@ -66,7 +66,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 100px;
+    height: 70px;
 }
 
 .nav-logo {
@@ -1019,7 +1019,7 @@ body {
     }
     
     .nav-container {
-        height: 90px;
+        height: 65px;
         padding: 0 20px;
     }
     
