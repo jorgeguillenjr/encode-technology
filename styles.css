@@ -1026,19 +1026,19 @@ body {
 
 @media (max-width: 768px) {
     .logo-combined {
-        height: 65px;
+        height: 45px;
         padding: 3px;
     }
     
     .nav-container {
-        height: 90px;
+        height: 70px;
         padding: 0 20px;
     }
     
     .nav-menu {
         position: fixed;
         left: -100%;
-        top: 85px;
+        top: 65px;
         flex-direction: column;
         background: #FFFFFF;
         backdrop-filter: blur(25px);
@@ -1136,11 +1136,21 @@ body {
 }
 
 @media (max-width: 480px) {
-    .container {
-        padding: 0 15px;
+    .logo-combined {
+        height: 35px;
+        padding: 2px;
     }
     
     .nav-container {
+        height: 60px;
+        padding: 0 15px;
+    }
+    
+    .nav-menu {
+        top: 55px;
+    }
+    
+    .container {
         padding: 0 15px;
     }
     
