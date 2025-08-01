@@ -208,6 +208,7 @@ body {
 
 .hero-text {
     animation: fadeInUp 1s ease-out;
+    margin-top: 60px;
 }
 
 .hero-title {
@@ -1093,7 +1094,9 @@ body {
     }
     
     .hero-text {
+        margin-top: 100px;
         animation: fadeInUp 1s ease-out;
+        margin-top: 80px;
     }
 
     .hero-buttons {
