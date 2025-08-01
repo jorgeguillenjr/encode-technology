@@ -1027,7 +1027,19 @@ body {
 
 @media (max-width: 768px) {
     .hero {
-        padding-top: 140px;
+        padding-top: 100px;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+    }
+    
+    .hero-content {
+        margin-top: 0;
+        padding-top: 0;
+    }
+    
+    .hero-text {
+        margin-bottom: 40px;
     }
     
     .logo-combined {
@@ -1090,17 +1102,19 @@ body {
     }
 
     .hero-title {
-        font-size: clamp(1.2rem, 7vw, 3.5rem);
+        font-size: clamp(1.8rem, 6vw, 3rem);
         line-height: 1.2;
-        margin-bottom: 25px;
-        padding: 0 10px;
+        margin-bottom: 20px;
+        padding: 0 5px;
         text-align: center;
     }
     
     .title-line {
-        font-size: clamp(1.2rem, 7vw, 3.5rem);
+        font-size: clamp(1.8rem, 6vw, 3rem);
         line-height: 1.2;
-        margin-bottom: 8px;
+        margin-bottom: 5px;
+        display: block;
+        width: 100%;
     }
     .hero-buttons {
         flex-direction: column;
@@ -1142,7 +1156,8 @@ body {
 
 @media (max-width: 480px) {
     .hero {
-        padding-top: 120px;
+        padding-top: 80px;
+        min-height: 100vh;
     }
     
     .logo-combined {
@@ -1164,16 +1179,18 @@ body {
     }
     
     .hero-title {
-        font-size: clamp(1rem, 8vw, 2.8rem);
+        font-size: clamp(1.5rem, 7vw, 2.5rem);
         line-height: 1.3;
-        margin-bottom: 20px;
-        padding: 0 5px;
+        margin-bottom: 15px;
+        padding: 0;
     }
     
     .title-line {
-        font-size: clamp(1rem, 8vw, 2.8rem);
+        font-size: clamp(1.5rem, 7vw, 2.5rem);
         line-height: 1.3;
-        margin-bottom: 5px;
+        margin-bottom: 3px;
+        display: block;
+        width: 100%;
     }
     
     .hero-subtitle {
