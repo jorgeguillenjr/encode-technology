@@ -1076,11 +1076,34 @@ body {
     .hero {
         padding-top: 100px;
         min-height: calc(100vh - 65px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    
+    .hero-text {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .hero-buttons {
         flex-direction: column;
         align-items: center;
+        width: 100%;
+        max-width: 300px;
     }
 
     .services-grid {
@@ -1105,10 +1128,19 @@ body {
         font-size: clamp(1.8rem, 6vw, 2.5rem);
         line-height: 1.2;
         margin-bottom: 25px;
+        text-align: center;
+        width: 100%;
     }
     
     .title-line {
         margin-bottom: 5px;
+        display: block;
+        text-align: center;
+    }
+    
+    .hero-subtitle {
+        text-align: center;
+        max-width: 100%;
     }
     
     .section-header {
