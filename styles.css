@@ -177,6 +177,7 @@ body {
     position: relative;
     background: linear-gradient(135deg, #1a1a1a 0%, #2C2C2C 50%, #1a1a1a 100%);
     overflow: hidden;
+    padding-top: 120px;
 }
 
 .particles-container {
@@ -1025,6 +1026,10 @@ body {
 }
 
 @media (max-width: 768px) {
+    .hero {
+        padding-top: 100px;
+    }
+    
     .logo-combined {
         height: 45px;
         padding: 3px;
@@ -1136,6 +1141,10 @@ body {
 }
 
 @media (max-width: 480px) {
+    .hero {
+        padding-top: 90px;
+    }
+    
     .logo-combined {
         height: 35px;
         padding: 2px;
