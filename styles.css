@@ -177,7 +177,7 @@ body {
     position: relative;
     background: linear-gradient(135deg, #1a1a1a 0%, #2C2C2C 50%, #1a1a1a 100%);
     overflow: hidden;
-    padding-top: 80px;
+    padding-top: 120px;
 }
 
 .particles-container {
