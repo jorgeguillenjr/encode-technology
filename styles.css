@@ -177,6 +177,7 @@ body {
     position: relative;
     background: linear-gradient(135deg, #1a1a1a 0%, #2C2C2C 50%, #1a1a1a 100%);
     overflow: hidden;
+    padding-top: 80px;
 }
 
 .particles-container {
@@ -1072,6 +1073,11 @@ body {
         transform: translateY(-9px) rotate(-45deg);
     }
 
+    .hero {
+        padding-top: 100px;
+        min-height: calc(100vh - 65px);
+    }
+
     .hero-buttons {
         flex-direction: column;
         align-items: center;
@@ -1127,6 +1133,11 @@ body {
     
     .logo-combined {
         height: 35px;
+    }
+    
+    .hero {
+        padding-top: 120px;
+        min-height: calc(100vh - 65px);
     }
     
     .hero-content {
