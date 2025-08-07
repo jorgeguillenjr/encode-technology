@@ -330,7 +330,7 @@
                         document.getElementById('formulario').addEventListener('submit', function (e) {
                         e.preventDefault(); // Previene el envío real
 
-                        const formData = new FormData(this);
+                        const formData = new FormData(form-group);
                         const servicio = formData.get('service');
 
                         alert("Servicio seleccionado: " + servicio);
