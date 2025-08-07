@@ -261,7 +261,7 @@ function initAOS() {
 // Form Handling
 function initEmailJS() {
     // Initialize EmailJS with your public key
-    emailjs.init("YOUR_PUBLIC_KEY"); // You'll need to replace this with your actual public key
+    emailjs.init("46hIvyeIQpRwMpL4h"); // You'll need to replace this with your actual public key
 }
 
 function handleFormSubmit(e) {
@@ -286,7 +286,7 @@ function handleFormSubmit(e) {
     };
     
     // Send email using EmailJS
-    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+    emailjs.send('service_nvd9t2a', 'template_nztcv73', templateParams)
         .then(function(response) {
             console.log('SUCCESS!', response.status, response.text);
             showNotification('¡Mensaje enviado exitosamente! Te contactaremos pronto.', 'success');
