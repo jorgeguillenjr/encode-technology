@@ -264,8 +264,24 @@ function initEmailJS() {
     emailjs.init("46hIvyeIQpRwMpL4h"); // You'll need to replace this with your actual public key
 }
 
+// Function to capture and display selected service (for testing)
+function captureServiceValue() {
+    const serviceSelect = document.getElementById('service');
+    const selectedValue = serviceSelect.value;
+    const selectedText = serviceSelect.options[serviceSelect.selectedIndex].text;
+    
+    if (selectedValue) {
+        console.log("Servicio seleccionado:", selectedText, "(Valor:", selectedValue + ")");
+        // You can also show an alert if needed for testing
+        // alert("Servicio seleccionado: " + selectedText);
+    }
+}
+
 function handleFormSubmit(e) {
     e.preventDefault();
+    
+    // Capture service value before sending
+    captureServiceValue();
     
     const submitButton = document.getElementById('submit-btn');
     const originalText = submitButton.innerHTML;
@@ -408,6 +424,12 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Form submission
     contactForm.addEventListener('submit', handleFormSubmit);
+    
+    // Add event listener to service dropdown for real-time feedback
+    const serviceSelect = document.getElementById('service');
+    if (serviceSelect) {
+        serviceSelect.addEventListener('change', captureServiceValue);
+    }
     
     // Smooth scroll for buttons
     document.querySelectorAll('[onclick*="scrollToSection"]').forEach(button => {
