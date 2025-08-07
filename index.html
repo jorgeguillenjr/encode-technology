@@ -326,6 +326,16 @@
                         </select>
                         <label for="service">Servicio de Interés</label>
                     </div>
+                    <script>
+                        document.getElementById('formulario').addEventListener('submit', function (e) {
+                        e.preventDefault(); // Previene el envío real
+
+                        const formData = new FormData(this);
+                        const servicio = formData.get('service');
+
+                        alert("Servicio seleccionado: " + servicio);
+                        });
+                    </script>
                     <div class="form-group">
                         <textarea id="message" name="message" placeholder=" " required rows="5"></textarea>
                         <label for="message">Mensaje</label>
