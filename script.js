@@ -267,7 +267,6 @@ function handleFormSubmit(e) {
     submitButton.innerHTML = 'Enviando...';
     submitButton.disabled = true;
 }
-}
 
 // Notification System
 function showNotification(message, type = 'info') {
