@@ -259,41 +259,80 @@ function initAOS() {
 }
 
 // Form Handling
+function initEmailJS() {
+    // Initialize EmailJS with your public key
+    emailjs.init("46hIvyeIQpRwMpL4h"); // You'll need to replace this with your actual public key
+}
+
+// Function to capture and display selected service (for testing)
+function captureServiceValue() {
+    const serviceSelect = document.getElementById('service');
+    const selectedValue = serviceSelect.value;
+    const selectedText = serviceSelect.options[serviceSelect.selectedIndex].text;
+    
+    if (selectedValue) {
+        console.log("Servicio seleccionado:", selectedText, "(Valor:", selectedValue + ")");
+        // You can also show an alert if needed for testing
+        // alert("Servicio seleccionado: " + selectedText);
+    }
+}
+
 function handleFormSubmit(e) {
     e.preventDefault();
     
-    const formData = new FormData(contactForm);
-    const formObject = {};
+    // Capture service value before sending
+    captureServiceValue();
     
-    formData.forEach((value, key) => {
-        formObject[key] = value;
-    });
-    
-    // Simulate form submission
-    const submitButton = contactForm.querySelector('.form-submit');
+    const submitButton = document.getElementById('submit-btn');
     const originalText = submitButton.innerHTML;
     
-    submitButton.innerHTML = 'Enviando...';
+    // Show loading state
+    submitButton.innerHTML = '<span>Enviando...</span>';
     submitButton.disabled = true;
     
-    setTimeout(() => {
-        submitButton.innerHTML = '¡Mensaje Enviado! ✓';
-        submitButton.style.background = '#10B981';
-        
-        setTimeout(() => {
-            submitButton.innerHTML = originalText;
-            submitButton.style.background = '';
-            submitButton.disabled = false;
+    // Get form data
+    const formData = new FormData(contactForm);
+    
+    // Get service select element and its value
+    const serviceSelect = document.getElementById('service');
+    const serviceValue = serviceSelect.value;
+    const serviceText = serviceSelect.options[serviceSelect.selectedIndex].text;
+    
+    console.log('Service Value:', serviceValue);
+    console.log('Service Text:', serviceText);
+    
+    const templateParams = {
+        from_name: formData.get('name'),
+        from_email: formData.get('email'),
+        phone: formData.get('phone'),
+        service: serviceText, // Send the readable text instead of value
+        service_value: serviceValue, // Also send the value for reference
+        message: formData.get('message'),
+        to_email: 'info@et-hn.com'
+    };
+    
+    console.log('Template Params:', templateParams);
+    
+    // Send email using EmailJS
+    emailjs.send('service_nvd9t2a', 'template_nztcv73', templateParams)
+        .then(function(response) {
+            console.log('SUCCESS!', response.status, response.text);
+            showNotification('¡Mensaje enviado exitosamente! Te contactaremos pronto.', 'success');
             contactForm.reset();
-            
-            // Show success message
-            showNotification('¡Mensaje enviado correctamente! Nos pondremos en contacto pronto.', 'success');
-        }, 2000);
-    }, 1500);
+        })
+        .catch(function(error) {
+            console.log('FAILED...', error);
+            showNotification('Error al enviar el mensaje. Por favor, intenta de nuevo.', 'error');
+        })
+        .finally(function() {
+            // Restore button state
+            submitButton.innerHTML = originalText;
+            submitButton.disabled = false;
+        });
 }
 
 // Notification System
-function showNotification(message, type = 'info') {
+function showNotification(message, type = 'success') {
     const notification = document.createElement('div');
     notification.className = `notification notification-${type}`;
     notification.textContent = message;
@@ -303,7 +342,7 @@ function showNotification(message, type = 'info') {
         position: 'fixed',
         top: '20px',
         right: '20px',
-        background: type === 'success' ? '#10B981' : '#4A9B8E',
+        background: type === 'success' ? '#10B981' : type === 'error' ? '#EF4444' : '#4A9B8E',
         color: 'white',
         padding: '16px 24px',
         borderRadius: '10px',
@@ -361,6 +400,9 @@ function animateTechCircles() {
 
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize EmailJS
+    initEmailJS();
+    
     // Start typing animation
     setTimeout(typeEffect, 1000);
     
@@ -394,6 +436,12 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Form submission
     contactForm.addEventListener('submit', handleFormSubmit);
+    
+    // Add event listener to service dropdown for real-time feedback
+    const serviceSelect = document.getElementById('service');
+    if (serviceSelect) {
+        serviceSelect.addEventListener('change', captureServiceValue);
+    }
     
     // Smooth scroll for buttons
     document.querySelectorAll('[onclick*="scrollToSection"]').forEach(button => {
