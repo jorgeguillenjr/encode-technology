@@ -292,14 +292,26 @@ function handleFormSubmit(e) {
     
     // Get form data
     const formData = new FormData(contactForm);
+    
+    // Get service select element and its value
+    const serviceSelect = document.getElementById('service');
+    const serviceValue = serviceSelect.value;
+    const serviceText = serviceSelect.options[serviceSelect.selectedIndex].text;
+    
+    console.log('Service Value:', serviceValue);
+    console.log('Service Text:', serviceText);
+    
     const templateParams = {
-        from_name: formData.get('from_name'),
-        from_email: formData.get('from_email'),
+        from_name: formData.get('name'),
+        from_email: formData.get('email'),
         phone: formData.get('phone'),
-        service: formData.get('service'),
+        service: serviceText, // Send the readable text instead of value
+        service_value: serviceValue, // Also send the value for reference
         message: formData.get('message'),
         to_email: 'info@et-hn.com'
     };
+    
+    console.log('Template Params:', templateParams);
     
     // Send email using EmailJS
     emailjs.send('service_nvd9t2a', 'template_nztcv73', templateParams)
