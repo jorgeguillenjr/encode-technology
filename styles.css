@@ -793,7 +793,7 @@ body {
         0 0 0 4px rgba(74, 155, 142, 0.25),
         0 8px 25px rgba(74, 155, 142, 0.15),
         inset 0 1px 0 rgba(74, 155, 142, 0.2);
-    background: rgba(20, 20, 20, 0.9);
+    background: rgba(20, 20, 20, 0.8);
     color: white;
     transform: translateY(-2px);
 }
@@ -902,7 +902,7 @@ body {
 .form-group select:focus {
     outline: none;
     border-color: #4A9B8E;
-    background: rgba(74, 155, 142, 0.1);
+    background: rgba(20, 20, 20, 0.8);
     box-shadow: 
         0 0 0 4px rgba(74, 155, 142, 0.25),
         0 8px 25px rgba(74, 155, 142, 0.2),
