@@ -762,44 +762,53 @@ body {
 .form-group select,
 .form-group textarea {
     width: 100%;
-    padding: 18px 20px;
-    border: 2px solid rgba(74, 155, 142, 0.3);
-    border-radius: 10px;
+    padding: 20px 24px;
+    border: 2px solid rgba(74, 155, 142, 0.4);
+    border-radius: 15px;
     font-size: 16px;
     font-family: inherit;
-    transition: all 0.3s ease;
-    background: rgba(26, 26, 26, 0.6);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: rgba(20, 20, 20, 0.8);
     color: white;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(15px);
+    box-shadow: 
+        0 4px 15px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(74, 155, 142, 0.1);
+    position: relative;
+    font-weight: 500;
 }
 
 .form-group textarea {
     resize: vertical;
-    min-height: 120px;
+    min-height: 140px;
+    line-height: 1.6;
 }
 
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: var(--primary-color);
+    border-color: #4A9B8E;
     box-shadow: 
-        0 0 0 3px rgba(74, 155, 142, 0.2),
-        0 0 20px rgba(74, 155, 142, 0.1);
-    background: rgba(255, 255, 255, 0.08);
+        0 0 0 4px rgba(74, 155, 142, 0.25),
+        0 8px 25px rgba(74, 155, 142, 0.15),
+        inset 0 1px 0 rgba(74, 155, 142, 0.2);
+    background: rgba(74, 155, 142, 0.08);
+    transform: translateY(-2px);
 }
 
 .form-group label {
     position: absolute;
-    top: 18px;
-    left: 20px;
-    color: rgba(255, 255, 255, 0.7);
+    top: 20px;
+    left: 24px;
+    color: rgba(255, 255, 255, 0.6);
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 400;
     pointer-events: none;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     background: transparent;
-    padding: 0 8px;
+    padding: 0 10px;
+    letter-spacing: 0.5px;
 }
 
 .form-group input:focus + label,
@@ -808,28 +817,33 @@ body {
 .form-group select:not([value=""]) + label,
 .form-group textarea:focus + label,
 .form-group textarea:not(:placeholder-shown) + label {
-    top: -10px;
-    left: 16px;
-    font-size: 13px;
+    top: -12px;
+    left: 20px;
+    font-size: 12px;
     font-weight: 600;
-    color: #4A9B8E;
-    background: rgba(26, 26, 26, 0.95);
-    padding: 0 8px;
-    backdrop-filter: blur(10px);
-    border-radius: 4px;
-    text-shadow: 0 0 10px rgba(74, 155, 142, 0.3);
+    color: #5FB3A3;
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.95), rgba(20, 20, 20, 0.95));
+    padding: 4px 12px;
+    backdrop-filter: blur(15px);
+    border-radius: 8px;
+    text-shadow: 0 0 15px rgba(74, 155, 142, 0.4);
+    border: 1px solid rgba(74, 155, 142, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 /* Placeholder styles */
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-    color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.3);
     opacity: 1;
+    font-weight: 400;
 }
 
 .form-group input:focus::placeholder,
 .form-group textarea:focus::placeholder {
     opacity: 0;
+    transform: translateX(10px);
 }
 
 /* Service Dropdown Styling */
@@ -837,48 +851,97 @@ body {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235FB3A3' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
     background-repeat: no-repeat;
-    background-position: right 15px center;
-    background-size: 20px;
-    padding-right: 50px;
+    background-position: right 20px center;
+    background-size: 18px;
+    padding-right: 55px;
     cursor: pointer;
     outline: none;
+    font-weight: 500;
 }
 
 .form-group select:focus {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234A9B8E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
-    border-color: #4A9B8E;
-    box-shadow: 
-        0 0 0 3px rgba(74, 155, 142, 0.2),
-        0 0 20px rgba(74, 155, 142, 0.1);
-    background-color: rgba(74, 155, 142, 0.1);
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234A9B8E' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-size: 20px;
 }
 
 .form-group select option {
-    background: #1a1a1a;
+    background: linear-gradient(135deg, #1a1a1a, #2C2C2C);
     color: white;
-    padding: 12px 20px;
+    padding: 15px 24px;
     border: none;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 400;
+    border-radius: 8px;
+    margin: 2px 0;
 }
 
 .form-group select option:hover,
 .form-group select option:focus {
-    background: #4A9B8E !important;
+    background: linear-gradient(135deg, #4A9B8E, #5FB3A3) !important;
     color: white;
+    font-weight: 500;
 }
 
 .form-group select option:checked {
-    background: #4A9B8E !important;
+    background: linear-gradient(135deg, #4A9B8E, #5FB3A3) !important;
     color: white;
     font-weight: 600;
+    box-shadow: 0 2px 10px rgba(74, 155, 142, 0.3);
 }
 
 .form-submit {
     width: 100%;
-    margin-top: 20px;
+    margin-top: 30px;
+}
+
+/* Enhanced submit button */
+.form-submit.btn-primary {
+    padding: 18px 32px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #4A9B8E 0%, #5FB3A3 100%);
+    border: 2px solid transparent;
+    box-shadow: 
+        0 8px 25px rgba(74, 155, 142, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.form-submit.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 
+        0 12px 35px rgba(74, 155, 142, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    background: linear-gradient(135deg, #5FB3A3 0%, #4A9B8E 100%);
+}
+
+.form-submit.btn-primary:active {
+    transform: translateY(-1px);
+    box-shadow: 
+        0 6px 20px rgba(74, 155, 142, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Add hover effects for form inputs */
+.form-group input:hover,
+.form-group select:hover,
+.form-group textarea:hover {
+    border-color: rgba(74, 155, 142, 0.6);
+    box-shadow: 
+        0 6px 20px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(74, 155, 142, 0.15);
+    transform: translateY(-1px);
+}
+
+/* Form group spacing */
+.form-group {
+    position: relative;
+    margin-bottom: 35px;
 }
 
 /* Footer */
