@@ -259,17 +259,52 @@ function initAOS() {
 }
 
 // Form Handling
+function initEmailJS() {
+    // Initialize EmailJS with your public key
+    emailjs.init("YOUR_PUBLIC_KEY"); // You'll need to replace this with your actual public key
+}
+
 function handleFormSubmit(e) {
-    // Don't prevent default - let Formspree handle the submission
-    const submitButton = contactForm.querySelector('.form-submit');
+    e.preventDefault();
+    
+    const submitButton = document.getElementById('submit-btn');
     const originalText = submitButton.innerHTML;
     
+    // Show loading state
     submitButton.innerHTML = '<span>Enviando...</span>';
     submitButton.disabled = true;
+    
+    // Get form data
+    const formData = new FormData(contactForm);
+    const templateParams = {
+        from_name: formData.get('from_name'),
+        from_email: formData.get('from_email'),
+        phone: formData.get('phone'),
+        service: formData.get('service'),
+        message: formData.get('message'),
+        to_email: 'info@et-hn.com'
+    };
+    
+    // Send email using EmailJS
+    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+        .then(function(response) {
+            console.log('SUCCESS!', response.status, response.text);
+            showNotification('¡Mensaje enviado exitosamente! Te contactaremos pronto.', 'success');
+            contactForm.reset();
+        })
+        .catch(function(error) {
+            console.log('FAILED...', error);
+            showNotification('Error al enviar el mensaje. Por favor, intenta de nuevo.', 'error');
+        })
+        .finally(function() {
+            // Restore button state
+            submitButton.innerHTML = originalText;
+            submitButton.disabled = false;
+        });
 }
 
 // Notification System
-function showNotification(message, type = 'info') {
+function showNotification(message, type = 'success') {
     const notification = document.createElement('div');
     notification.className = `notification notification-${type}`;
     notification.textContent = message;
@@ -279,7 +314,7 @@ function showNotification(message, type = 'info') {
         position: 'fixed',
         top: '20px',
         right: '20px',
-        background: type === 'success' ? '#10B981' : '#4A9B8E',
+        background: type === 'success' ? '#10B981' : type === 'error' ? '#EF4444' : '#4A9B8E',
         color: 'white',
         padding: '16px 24px',
         borderRadius: '10px',
@@ -337,6 +372,9 @@ function animateTechCircles() {
 
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize EmailJS
+    initEmailJS();
+    
     // Start typing animation
     setTimeout(typeEffect, 1000);
     

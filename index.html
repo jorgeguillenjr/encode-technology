@@ -7,6 +7,7 @@
     <title>Encode Technology - Soluciones Tecnológicas Avanzadas</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
     <!-- Navigation -->
@@ -302,20 +303,20 @@
                 </div>
                 <form class="contact-form" data-aos="fade-left" id="contact-form" action="https://formspree.io/f/mblkkplw" method="POST">
                     <div class="form-group">
-                        <input type="text" id="name" name="name" placeholder=" " required>
+                        <input type="text" id="name" name="from_name" placeholder=" " required>
                         <label for="name">Nombre Completo</label>
                     </div>
                     <div class="form-group">
-                        <input type="email" id="email" name="email" placeholder=" " required>
+                        <input type="email" id="email" name="from_email" placeholder=" " required>
                         <label for="email">Correo Electrónico</label>
                     </div>
                     <div class="form-group">
-                        <input type="tel" id="phone" name="phone" placeholder=" ">
+                        <input type="tel" id="phone" name="phone" placeholder=" " required>
                         <label for="phone">Teléfono</label>
                     </div>
                     <div class="form-group">
                         <select id="service" name="service" required>
-                            <option value="" disabled selected>Seleccionar Servicio</option>
+                            <option value="">Seleccionar Servicio</option>
                             <option value="databases">Bases de Datos</option>
                             <option value="process">Mejoras de Procesos</option>
                             <option value="web">Desarrollo Web</option>
@@ -326,10 +327,10 @@
                         <label for="service">Servicio de Interés</label>
                     </div>
                     <div class="form-group">
-                        <textarea id="message" name="message" placeholder=" " required></textarea>
+                        <textarea id="message" name="message" placeholder=" " required rows="5"></textarea>
                         <label for="message">Mensaje</label>
                     </div>
-                    <button type="submit" class="btn btn-primary form-submit">
+                    <button type="submit" class="btn btn-primary form-submit" id="submit-btn">
                         Enviar Mensaje
                         <span class="btn-arrow">→</span>
                     </button>
