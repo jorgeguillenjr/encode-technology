@@ -260,36 +260,13 @@ function initAOS() {
 
 // Form Handling
 function handleFormSubmit(e) {
-    e.preventDefault();
-    
-    const formData = new FormData(contactForm);
-    const formObject = {};
-    
-    formData.forEach((value, key) => {
-        formObject[key] = value;
-    });
-    
-    // Simulate form submission
+    // Let the form submit naturally to Formspree
     const submitButton = contactForm.querySelector('.form-submit');
     const originalText = submitButton.innerHTML;
     
     submitButton.innerHTML = 'Enviando...';
     submitButton.disabled = true;
-    
-    setTimeout(() => {
-        submitButton.innerHTML = '¡Mensaje Enviado! ✓';
-        submitButton.style.background = '#10B981';
-        
-        setTimeout(() => {
-            submitButton.innerHTML = originalText;
-            submitButton.style.background = '';
-            submitButton.disabled = false;
-            contactForm.reset();
-            
-            // Show success message
-            showNotification('¡Mensaje enviado correctamente! Nos pondremos en contacto pronto.', 'success');
-        }, 2000);
-    }, 1500);
+}
 }
 
 // Notification System

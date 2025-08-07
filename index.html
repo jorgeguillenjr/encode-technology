@@ -300,13 +300,13 @@
                         </div>
                     </div>
                 </div>
-                <form class="contact-form" data-aos="fade-left" id="contact-form">
+                <form class="contact-form" data-aos="fade-left" id="contact-form" action="https://formspree.io/f/xqaldrwz" method="POST">
                     <div class="form-group">
                         <input type="text" id="name" name="name" required>
                         <label for="name">Nombre Completo</label>
                     </div>
                     <div class="form-group">
-                        <input type="email" id="email" name="email" required>
+                        <input type="email" id="email" name="_replyto" required>
                         <label for="email">Correo Electrónico</label>
                     </div>
                     <div class="form-group">
@@ -329,6 +329,8 @@
                         <textarea id="message" name="message" required></textarea>
                         <label for="message">Mensaje</label>
                     </div>
+                    <!-- Formspree honeypot field -->
+                    <input type="text" name="_gotcha" style="display:none" />
                     <button type="submit" class="btn btn-primary form-submit">
                         Enviar Mensaje
                         <span class="btn-arrow">→</span>
