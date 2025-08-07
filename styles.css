@@ -805,7 +805,7 @@ body {
     font-size: 16px;
     font-weight: 400;
     pointer-events: none;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 0.3s ease;
     background: transparent;
     padding: 0 10px;
     letter-spacing: 0.5px;
@@ -817,19 +817,7 @@ body {
 .form-group select:not([value=""]) + label,
 .form-group textarea:focus + label,
 .form-group textarea:not(:placeholder-shown) + label {
-    top: -12px;
-    left: 20px;
-    font-size: 12px;
-    font-weight: 600;
-    color: #5FB3A3;
-    background: linear-gradient(135deg, rgba(26, 26, 26, 0.95), rgba(20, 20, 20, 0.95));
-    padding: 4px 12px;
-    backdrop-filter: blur(15px);
-    border-radius: 8px;
-    text-shadow: 0 0 15px rgba(74, 155, 142, 0.4);
-    border: 1px solid rgba(74, 155, 142, 0.3);
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    opacity: 0;
 }
 
 /* Placeholder styles */
