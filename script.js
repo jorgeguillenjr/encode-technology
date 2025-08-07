@@ -260,17 +260,12 @@ function initAOS() {
 
 // Form Handling
 function handleFormSubmit(e) {
+    // Don't prevent default - let Formspree handle the submission
     const submitButton = contactForm.querySelector('.form-submit');
     const originalText = submitButton.innerHTML;
     
-    submitButton.innerHTML = 'Enviando...';
+    submitButton.innerHTML = '<span>Enviando...</span>';
     submitButton.disabled = true;
-    
-    // Re-enable button after 3 seconds in case of issues
-    setTimeout(() => {
-        submitButton.innerHTML = originalText;
-        submitButton.disabled = false;
-    }, 3000);
 }
 
 // Notification System
